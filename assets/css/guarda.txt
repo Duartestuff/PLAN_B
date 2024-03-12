@@ -1,0 +1,297 @@
+
+---------------------
+
+   
+  
+   
+   
+   -------------------------------------------------------------
+
+nav a:hover{
+    background-color: #f47a99;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    background-color: rgba(0, 0, 0, 0.089);
+}
+#nav{
+    background: linear-gradient(to right,#f47a99,#fff4f4); 
+    color: transparent; 
+}
+
+.img:hover {
+    padding: 1px;
+    transform: scale(1.2); 
+
+}
+
+.boton{
+    text-decoration: none;
+    background-color: #8f91e6;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 15px;
+    color: rgb(15, 15, 15);
+}
+.imagen-circular {
+   
+    overflow: hidden;
+    border-radius: 50%; 
+  }
+  
+  .imagen-circular img {
+    height: 400px;
+    display: block;
+  }
+  
+.boton:hover{
+    background-color: #8f91e6(51, 2, 97);
+    color: wheat;
+
+}
+
+.marquee-container {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee-container img {
+    display: inline-block;
+    margin-right: 20px; 
+}
+
+
+
+
+.img_testimonio{
+    border-radius: 30px;
+    width: 70px;
+    height: 70px;
+    margin-right:20px
+}
+
+#seccion_2{
+    background-color: #D5F2EA;
+    margin: 100px 0px;
+}
+
+.container {
+    margin: 8em 0;
+}
+
+.image-container {
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width:254px;
+    height: 254px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #f47a99;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.icon-container {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #25D366;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .icon-container:hover {
+    background-color: #ffffff;
+  }
+
+
+
+
+
+
+
+
+
+     
+    <!------------------------------------------------------------------------------------------------->
+    <!--SECCION_2
+        <section id="seccion_2" class="container-fluid p-5">
+            <div class="row justify-content-evenly">
+                <div class="col-6 text-center mb-4">
+                    <div style="height: 300px;">
+                        <h1>Tu Salón de Belleza</h1>
+                        <b style="font-size: 24px;">No solo nos encargaremos de tu cabello y de que recuperes tus
+                            crespos
+                            soñados, sino que
+                            también te
+                            brindaremos terapias holísticas que te ayudarán a tratar el ser, la mente y las emociones;
+                            aspectos
+                            fundamentales para la salud integral.</b>
+                    </div>
+                    <div>
+                        <a href="servicios.html" class="btn">Ver Servicios</a>
+                    </div>
+                </div>
+                <div class="col-6" style="text-align: center;">
+                    <div class="p-5">
+                        <img src="assets/img/Crespas/IMG1.jpeg" alt="Cabello Rizado"
+                            style="object-fit: cover;border-radius: 15px;width: 350px;height: 350px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+----------------------------------------------------------------------------------------------->
+
+    <!--QUIZ  ESTO VA EN UNA PAGINA APARTE DONDE IRA EL FORMULARIO
+
+        
+<section id="seccion_3" class="container-fluid">
+
+            <div class="row" style="background-color: #d5f2ea;padding: 20px;">
+                <div class="col-6 p-5 text-center">
+                    <h2 style="text-align: center;">¿Estoy lista para este cambio?</h2>
+                    <br>
+                    <div style="height: 200px;">
+                        <b style="font-size: 24px;"> 
+                        </b>
+                    </div>
+                    <div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzgqzdcTKquGK0V8rNUkB0dYrLsTCrCAlHIKizUwrRsHVemg/viewform?pli=1"
+                            target="_blank"><button class="boton" type="button" style="width: 300px;">Quiz</button></a>
+                    </div>
+                </div>
+
+
+                <div class="col-6" style="text-align: center;">
+                    <div>
+                        <div class="p-5">
+                            <img src="assets/img/Crespas/imagen.jpg" style="object-fit: cover;border-radius: 20px;width: 350px;height: 350px;" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+------------------------------------------------------------------------------------------->
+
+    <!--Testimonios
+
+        <section id="seccion_4">
+
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-evenly m-2">
+
+                    <div class="col-5 p-5 rounded" style="background-color: #D5F2EA;">
+                        <div class="mb-3" style="font-size: 30px;">
+                            <h2><img src="assets/img/Crespas/crespaC.jpg" class="img_testimonio">María Alvés</h2>
+                        </div>
+                        <p>Venía sintiéndome inconforme con mi cabello, imagen desde hace mucho rato. Había dejado
+                            crecer
+                            mucho mi cabello por miedo a ir a peluquerías por tantas malas experiencias que había
+                            tenido.
+                            Gloria fue amable desde el inicio, me ayudó a entender que quería (porque creo que eso es
+                            parte
+                            del problema de no tener suficientes espacios como crespas, no saber bien que se quiere).
+                            También me enseñó muchas cosas sobre como cuidarlo, esto es una de las cosas más
+                            importantes!
+
+                            Creo que lo más valioso que me llevo de la experiencia fue sentir que si había un espacio
+                            para
+                            mí, pensado en mis necesidades .
+
+                            Sin duda ha sido mi mejor experiencia al atender mi cabello y el mejor corte de cabello que
+                            he
+                            tenido.
+
+                            Si estás dudando como yo lo hice te diré lo que me dije para venir: si haces lo de siempre,
+                            tendrás el resultado de siempre.
+                        </p>
+                    </div>
+
+                    <div class="col-5 p-5 rounded" style="background-color: #D5F2EA;">
+                        <div class="mb-3">
+                            <h2><img src="assets/img/Crespas/IMG1.jpeg" class="img_testimonio">Zaire</h2>
+                        </div>
+
+                        <p>Después de que mi pelito fuera tocado por las manos de esta maravillosa mujer, pude sentir un
+                            cambio preciosos. Más allá del físico, cuando salí de su bello espacio pude sentir como me
+                            renacía cómo todo de nuevo estaba en orden y mi autoestima se renovaba. Servicio excelente
+                            mi
+                            cabello se siente mucho más fuerte y más bello. Recomendado sin lugar a dudas..</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <br>
+
+       ----------------------------------------------------------------------------------------------->
+    <!--seccion de nav
+
+        <section id="nav">
+            <div class="container-fluid p-3" style="background-color: #f18da800">
+                <div class="row justify-content-evenly">
+                    <div class="col-10 col-lg-7">
+                        <nav class="navbar navbar-expand-sm">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="index.html"><i class="Logo"></i>inicio</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="Catalogo.html"><i
+                                            class=""></i>Catalogo</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="ExperienciaLu.html">Experiencia Lu<i
+                                            class=""></i></a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="DescubreTuTalla.html"><i
+                                            class=""></i>Descubre tu talla</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+-->
+
+
+    <!------------------------------------------------------------------------------------------------->
