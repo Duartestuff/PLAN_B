@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "productos",
+            "database": "${workspaceFolder:PLAN_B}/database/productos.db"
+        }
+    ]
+}
