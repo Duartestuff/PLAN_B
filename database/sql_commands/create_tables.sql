@@ -35,3 +35,15 @@ CREATE TABLE IF NOT EXISTS products (
     FOREIGN KEY (ref) REFERENCES product_list(ref),
     FOREIGN KEY (inventory_id) REFERENCES product_inventory(inventory_id)
 );
+
+CREATE TABLE IF NOT EXISTS orders (
+
+    order_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    inventory_id VARCHAR(10),
+    talla INTEGER,
+    cantidad INTEGER,
+    precio INTEGER,
+    realizado INTEGER CHECK(realizado IN(0, 1)),
+    FOREIGN KEY (inventory_id) REFERENCES product_inventory,
+    FOREIGN KEY (precio) REFERENCES product_list
+);
