@@ -1,0 +1,18 @@
+Este flask app se basa en un virtual environment que se debe crear al clonar el proyecto desde github, desde el command line, posicionado desde la carpeta flask_sever:
+
+<<AL CLONAR>>
+RUN:
+    > python -m venv venv (Esto crea el folder venv (virtual environment))
+    > venv\Scripts\activate (Esto activa el virtua environment en el command line)
+    > pip install -r requirements.txt (Esto instala las dependencias del proyecto, las librerías usadas como flask, flask-wtf, etc)
+    > python app.py (Corre el servidor de flask en el )
+
+SALIR DEL VENV:
+    > deactivate
+
+<<AL TERMINAR CAMBIOS EN EL SERVIDOR>>
+COMO GUARDAR EL requirements.txt:
+Lo primero es estar localizado en el virtual environment en el command line:
+
+    > venv\Scripts\activate (Activa el venv, el command line debe aparcer así (venv) >)
+    > pip freeze > requirements.txt (Esto crea el requirements.txt con las dependencias instaladas hasta el momento)
