@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiencia de Marca - Lu</title>
+  <link rel="stylesheet" href="styleexpereciencia.css">
+  <!-- Fuente de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="ruta/a/tu/logo.png" alt="Logo de Lu">
+    </div>
+    <div class="brand">
+      <h1>Lu</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    <!--imagen de fondo -->
+    <div class="banner" style="background-image: url('fondo.jpg');">
+      <div class="slider" id="slider">
+        <div class="slide">
+          <img src="imagenes.img/imagenferia1.png" alt="Slide 1">
+          <div class="slide-info">Fecha: 13/03/2024</div>
+        </div>
+        <div class="slide">
+          <img src="imagenes.img/video1.mp4" alt="Slide 2">
+          <div class="slide-info">Fecha: 13/03/2024</div>
+        </div>
+        <div class="slide">
+          <iframe src="imagenes.img/imagenferia2.png" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div class="slide-info">Fecha: 13/03/2024</div>
+        </div>
+        <div class="slide">
+          <iframe src="imagenes.img/video2.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div class="slide-info">Fecha: 23/03/2024</div>
+        </div>
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </div>
+  
+  <section class="experiencia">
+    <div class="container">
+      <h2>¿Qué buscamos como marca?</h2>
+      <p>Es una marca pensada en las mujeres que aman la moda casual sin importar la talla. Está inspirada en las mujeres trabajadoras, independientes y que desean tener un buen outfit con una inversión justa.</p>
+    </div>
+  </section>
+  
+  <section class="ferias">
+    <div class="container">
+      <h2>Vive la Experiencia de Nuestras Ferias</h2>
+      <p>¡Hay que vivir la experiencia de las ferias, algunas han sido muy buenas y otras no tanto; depende también del público al que esté dirigida, la temporada, el clima, y la buena difusión del evento!</p>
+    </div>
+  </section>
+  
+  <script src="script.js"></script>
+</body>
+</html>

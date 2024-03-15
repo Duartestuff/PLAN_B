@@ -1,0 +1,137 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #F2D5F2;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Ajusta el tamaño del logo según tu diseño */
+  margin-right: 10px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.experiencia {
+  background-color: #EAAEF2;
+  color: #333;
+  padding: 50px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.experiencia h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.experiencia p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.ferias {
+  background-color: #8466F2;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.ferias h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.ferias p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Estilos del banner y carrusel */
+
+.banner {
+  width: 50%; /* Ancho del banner */
+  max-width: 150px; /* Máximo ancho del banner */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider {
+  display: flex;
+  width: 200%; /* Ancho total = número de slides * 100% */
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 1;
+  min-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide img,
+.slide iframe {
+  width: 100%; /* Ancho del contenido del slide */
+  height: auto;
+}
+
+.slide-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Cambiar el color del hover de los botones */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
