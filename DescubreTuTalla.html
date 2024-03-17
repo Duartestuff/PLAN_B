@@ -1,134 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/Crespas/Logo sin fondo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" width: 100% ;background-color: #f2d5f2!important">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="Catalogo.html">Catalogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ExperienciaLu.html">Experiencias Lu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="DescubreTuTalla.html">Descubre tu talla</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Otros servicios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Personalizados</a>
-                        <a class="dropdown-item" href="#">Dotacion para empresas</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <a href="index.html"> <img class="logo_lu" src="assets/img/Lu_sin_fondo.png" alt="Logo"></a>
-    </nav>
-
-
-    <title>Servicios</title>
-    <style>
-        body {
-            font-family: Roboto, sans-serif;
-            background-image: url('assets/img/Crespas/tijerasCover.avif');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-
-        .service2 {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 5px;
-            box-shadow: 10px 10px;
-
-            h2 {
-                color: black
-            }
-
-            h3 {
-                color: black
-            }
-        }
-
-        .service {
-            background-color: #8f91e6;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 10px 10px;
-
-            h2 {
-                color: black
-            }
-
-            h3 {
-                color: black
-            }
-        }
-    </style>
+    <title>Descubre tu talla</title>
 </head>
-
+</head>
 <body>
+    <h2>Calcula la talla de tu vestido o blusa</h2>
+    <p> Toma una cinta métrica y toma el 
+        contorno de tu busto y cintura</p>
+    <form>
+        <label for="medidasBusto">Busto:</label>
+        <input type="text" id="medidasBusto" placeholder="Ingresa tu medida de busto">
+        <br> <br>
+        <label for="medidasCintura">Cintura:</label>
+        <input type="text" id="medidasCintura" placeholder="Ingresa tu medida de cintura"> 
+        <br> <br>
+        <button type="button" onclick="calcularTalla()">Calcule la talla Vestido/Blusa</button>
+    </form>
+
+    <script>
+        function calcularTalla() {
+            // Obtener los valores de busto y cintura
+            let busto = parseInt(document.getElementById("medidasBusto").value);
+            let cintura = parseInt(document.getElementById("medidasCintura").value);
+
+            // Definir rangos de tallas y medidas correspondientes
+            let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
+            let medidasBusto = [80, 85, 90, 95, 100, 105, 110];
+            let medidasCintura = [60, 65, 70, 75, 80, 85, 90];
+
+            // Verificar la talla basada en las medidas de busto y cintura
+            for (let i = 0; i < tallas.length; i++) {
+                if (busto <= medidasBusto[i] && cintura <= medidasCintura[i]) {
+                    alert("La talla es: " + tallas[i]);
+                    return; // Terminar la función después de encontrar la talla
+                }
+            }
+            
+            // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
+            alert("Talla no encontrada");
+        }
+
+        
+    </script>
+    
+    <h2>Calcula la talla de tu pantalón o falda</h2>
+    <p> Toma una cinta métrica y toma el 
+        contorno de tu cintura, cadera y muslo</p>
+    <form>
+        <label for="medidasCintura2">Cintura:</label>
+        <input type="text" id="medidasCintura2" placeholder="Ingresa tu medida de cintura">
+        <br> <br>
+        <label for="medidasCadera">Cadera:</label>
+        <input type="text" id="medidasCadera" placeholder="Ingresa tu medida de cadera"> 
+        <br> <br>
+        <label for="medidasMuslo">Muslo:</label>
+        <input type="text" id="medidasMuslo" placeholder="Ingresa tu medida de muslo"> 
+        <br> <br>
+        <button type="button" onclick="calcularTallaInferior()">Calcule la talla de prendas inferiores</button>
+    </form>
+
+    <script>
+        function calcularTallaInferior() {
+            // Obtener los valores de  cintura, cadera y muslo
+            let cintura2 = parseInt(document.getElementById("medidasCintura2").value);
+            let cadera = parseInt(document.getElementById("medidasCadera").value);
+            let muslo = parseInt(document.getElementById("medidasMuslo").value);
+            // Definir rangos de tallas y medidas correspondientes
+            let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
+            let medidasCintura2 = [71, 75, 79, 83, 87, 91, 95];
+            let medidasCadera = [97, 101, 105, 109, 113, 117, 121];
+            let medidasMuslo = [56, 58, 60, 62, 64, 66, 68];
 
 
-    <div style="position: absolute;right: 0px;left: 40%;margin: 20px 20px;">
-        <div class="service">
-            <h2>Corte</h2>
-            <h6>Nuestras técnicas de corte se realizan en seco para dar definición o sólo
-                eliminar resequedad y maltrato en todas las texturas,
-                desde onduladas, rizadas hasta afro.</h6>
-        </div>
-        <div class="service2">
-            <h2>Color</h2>
-            <h6>Hacemos mantenimiento de color, cubrimiento de canas,
-                iluminaciones, balayage.</h6>
-        </div>
-        <div class="service">
-            <h2>Peinados</h2>
-            <h6>Hacemos trenzas y peinados especiales.</h6>
-        </div>
-        <div class="service2">
-            <h2>Hidratación y recuperación</h2>
-            <h6> Hidratamos el cabello para reponer la humedad naatural y
-                los nutrientes y hacemos procesos de repolarización para recuperar la fibra natural. </h6>
-        </div>
-        <div class="service">
-            <h2>Terapias holísticas</h2>
-            <h6> De la mano de la psicología trabajamos el ser y vamos más alla de las emociones
-                para tratar de manera integral el cuerpo y la mente. </h6>
-        </div>
-    </div>
+            // Verificar la talla basada en las medidas de busto y cintura
+            for (let i = 0; i < tallas.length; i++) {
+                if (cintura2 <= medidasCintura2[i] && cadera <= medidasCadera[i] && muslo<= medidasMuslo[i]){
+                    alert("La talla es: " + tallas[i]);
+                    return; // Terminar la función después de encontrar la talla
+                }
+            }
+            
+            // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
+            alert("Talla no encontrada");
+        }
+    </script>
 
-    <!--scripts-->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>
+
+
+
+
+

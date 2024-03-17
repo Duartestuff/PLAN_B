@@ -1,4 +1,7 @@
 body {
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -9,6 +12,7 @@ body {
         width: 100%;
         font-size: 14px;
     }
+}
 
     /*---------------------------------------*/
     .logo_lu {
@@ -48,11 +52,7 @@ body {
         border-radius: 10px;
         box-shadow: 0 8px 10px #f07ef2bf;
         transition: transform 0.3s;
-
-        @media (max-width: 500px) {
-            width: 100%;
-            font-size: 14px;
-        }
+         width: 500px;
     }
 
   
@@ -80,7 +80,7 @@ body {
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
-        margin: 3%;
+        padding: 0% 0% 10% 0% ;
     }
 
     .marco_lu:hover {
@@ -111,4 +111,14 @@ body {
             height: 100%;
         }
     }
+
+.Texto_presentacion{
+ display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0% 0% 5% 0%;
+    background-color: #888df2a8;
+    border-radius: 10px;
+    width: 100%px;
 }
