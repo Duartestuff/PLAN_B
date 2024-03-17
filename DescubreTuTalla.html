@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,9 @@
 </head>
 </head>
 
-<body>
+<body style="background-image: url(assets/img/patron_perfeccionado_LU.png);">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" background-color: #f2d5f2!important">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" width: 100% ;background-color: #f2d5f2!important">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,93 +40,93 @@
         <a href="index.html"> <img class="logo_lu" src="assets/img/Lu_sin_fondo.png" alt="Logo"></a>
     </nav>
 
-  <!-------------------------------------------------------------------------------------------------->  
-    <div class="formulariotalla" >
+    <!-------------------------------------------------------------------------------------------------->
+    <div class="formulariotalla">
 
-    <h2>Calcula la talla de tu vestido o blusa</h2>
-    <p> Toma una cinta métrica y toma el 
-        contorno de tu busto y cintura</p>
-    <form>
-        <label for="medidasBusto">Busto:</label>
-        <input type="text" id="medidasBusto" placeholder="Ingresa tu medida de busto">
-        <br> <br>
-        <label for="medidasCintura">Cintura:</label>
-        <input type="text" id="medidasCintura" placeholder="Ingresa tu medida de cintura"> 
-        <br> <br>
-        <button type="button" onclick="calcularTalla()">Calcule la talla Vestido/Blusa</button>
-    </form>
+        <h2>Calcula la talla de tu vestido o blusa</h2>
+        <p> Toma una cinta métrica y toma el
+            contorno de tu busto y cintura</p>
+        <form>
+            <label for="medidasBusto">Busto:</label>
+            <input type="text" id="medidasBusto" placeholder="Ingresa tu medida de busto">
+            <br> <br>
+            <label for="medidasCintura">Cintura:</label>
+            <input type="text" id="medidasCintura" placeholder="Ingresa tu medida de cintura">
+            <br> <br>
+            <button type="button" onclick="calcularTalla()">Calcule la talla Vestido/Blusa</button>
+        </form>
 
-    <script>
-        function calcularTalla() {
-            // Obtener los valores de busto y cintura
-            let busto = parseInt(document.getElementById("medidasBusto").value);
-            let cintura = parseInt(document.getElementById("medidasCintura").value);
+        <script>
+            function calcularTalla() {
+                // Obtener los valores de busto y cintura
+                let busto = parseInt(document.getElementById("medidasBusto").value);
+                let cintura = parseInt(document.getElementById("medidasCintura").value);
 
-            // Definir rangos de tallas y medidas correspondientes
-            let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
-            let medidasBusto = [80, 85, 90, 95, 100, 105, 110];
-            let medidasCintura = [60, 65, 70, 75, 80, 85, 90];
+                // Definir rangos de tallas y medidas correspondientes
+                let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
+                let medidasBusto = [80, 85, 90, 95, 100, 105, 110];
+                let medidasCintura = [60, 65, 70, 75, 80, 85, 90];
 
-            // Verificar la talla basada en las medidas de busto y cintura
-            for (let i = 0; i < tallas.length; i++) {
-                if (busto <= medidasBusto[i] && cintura <= medidasCintura[i]) {
-                    alert("La talla es: " + tallas[i]);
-                    return; // Terminar la función después de encontrar la talla
+                // Verificar la talla basada en las medidas de busto y cintura
+                for (let i = 0; i < tallas.length; i++) {
+                    if (busto <= medidasBusto[i] && cintura <= medidasCintura[i]) {
+                        alert("La talla es: " + tallas[i]);
+                        return; // Terminar la función después de encontrar la talla
+                    }
                 }
+
+                // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
+                alert("Talla no encontrada");
             }
-            
-            // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
-            alert("Talla no encontrada");
-        }
-
-        
-    </script>
-    
-    <h2>Calcula la talla de tu pantalón o falda</h2>
-    <p> Toma una cinta métrica y toma el 
-        contorno de tu cintura, cadera y muslo</p>
-    <form>
-        <label for="medidasCintura2">Cintura:</label>
-        <input type="text" id="medidasCintura2" placeholder="Ingresa tu medida de cintura">
-        <br> <br>
-        <label for="medidasCadera">Cadera:</label>
-        <input type="text" id="medidasCadera" placeholder="Ingresa tu medida de cadera"> 
-        <br> <br>
-        <label for="medidasMuslo">Muslo:</label>
-        <input type="text" id="medidasMuslo" placeholder="Ingresa tu medida de muslo"> 
-        <br> <br>
-        <button type="button" onclick="calcularTallaInferior()">Calcule la talla de prendas inferiores</button>
-    </form>
-
-    <script>
-        function calcularTallaInferior() {
-            // Obtener los valores de  cintura, cadera y muslo
-            let cintura2 = parseInt(document.getElementById("medidasCintura2").value);
-            let cadera = parseInt(document.getElementById("medidasCadera").value);
-            let muslo = parseInt(document.getElementById("medidasMuslo").value);
-            // Definir rangos de tallas y medidas correspondientes
-            let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
-            let medidasCintura2 = [71, 75, 79, 83, 87, 91, 95];
-            let medidasCadera = [97, 101, 105, 109, 113, 117, 121];
-            let medidasMuslo = [56, 58, 60, 62, 64, 66, 68];
 
 
-            // Verificar la talla basada en las medidas de busto y cintura
-            for (let i = 0; i < tallas.length; i++) {
-                if (cintura2 <= medidasCintura2[i] && cadera <= medidasCadera[i] && muslo<= medidasMuslo[i]){
-                    alert("La talla es: " + tallas[i]);
-                    return; // Terminar la función después de encontrar la talla
+        </script>
+
+        <h2>Calcula la talla de tu pantalón o falda</h2>
+        <p> Toma una cinta métrica y toma el
+            contorno de tu cintura, cadera y muslo</p>
+        <form>
+            <label for="medidasCintura2">Cintura:</label>
+            <input type="text" id="medidasCintura2" placeholder="Ingresa tu medida de cintura">
+            <br> <br>
+            <label for="medidasCadera">Cadera:</label>
+            <input type="text" id="medidasCadera" placeholder="Ingresa tu medida de cadera">
+            <br> <br>
+            <label for="medidasMuslo">Muslo:</label>
+            <input type="text" id="medidasMuslo" placeholder="Ingresa tu medida de muslo">
+            <br> <br>
+            <button type="button" onclick="calcularTallaInferior()">Calcule la talla de prendas inferiores</button>
+        </form>
+
+        <script>
+            function calcularTallaInferior() {
+                // Obtener los valores de  cintura, cadera y muslo
+                let cintura2 = parseInt(document.getElementById("medidasCintura2").value);
+                let cadera = parseInt(document.getElementById("medidasCadera").value);
+                let muslo = parseInt(document.getElementById("medidasMuslo").value);
+                // Definir rangos de tallas y medidas correspondientes
+                let tallas = ["XS/6", "S/8", "M/10", "L/12", "XL/14", "XXL/16", "XXXL/18"];
+                let medidasCintura2 = [71, 75, 79, 83, 87, 91, 95];
+                let medidasCadera = [97, 101, 105, 109, 113, 117, 121];
+                let medidasMuslo = [56, 58, 60, 62, 64, 66, 68];
+
+
+                // Verificar la talla basada en las medidas de busto y cintura
+                for (let i = 0; i < tallas.length; i++) {
+                    if (cintura2 <= medidasCintura2[i] && cadera <= medidasCadera[i] && muslo <= medidasMuslo[i]) {
+                        alert("La talla es: " + tallas[i]);
+                        return; // Terminar la función después de encontrar la talla
+                    }
                 }
+
+                // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
+                alert("Talla no encontrada");
             }
-            
-            // Si las medidas no coinciden con ninguna talla conocida, mostrar mensaje de error
-            alert("Talla no encontrada");
-        }
-    </script>
-</div>
- <br><br>
+        </script>
+    </div>
+    <br><br>
     <!--FOOTER-->
-    <section id="footer" class="pie" style="background-color: #05aff28a;">
+    <section id="footer" class="pie" style=" width: 100% ;background-color: #05aff28a;">
         <br>
         <footer>
             <p>&copy; 2024 Todos los derechos reservados.</p>
@@ -150,9 +151,5 @@
 
 
 </body>
+
 </html>
-
-
-
-
-

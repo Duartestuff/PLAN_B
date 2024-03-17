@@ -1,29 +1,42 @@
 body {
     font-size: 24px;
-        font-family: Roboto, sans-serif;
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
 }
 
-    .logo_lu {
-        width: 50px;
-        height: 50px;
+.logo_lu {
+    width: 50px;
+    height: 50px;
+}
+
+.formulariotalla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   padding: 5% 5% 5% 5%;
+    background-color: #888df2a8;
+}
+
+
+
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40%;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        font-size: 14px;
     }
-.formulariotalla{}
 
-
-
-
-    .pie {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 40%;
-        padding-left: 5%;
-        padding-bottom: 1%;
-        padding-top: 1%;
-
-        @media (max-width: 500px) {
-            width: 100%;
-            font-size: 14px;
-        }
-
-    }
+}
