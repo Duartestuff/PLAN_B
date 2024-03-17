@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Detalles del pedido</h1>
+    <div>
+        <p>Referencia: {{ order['product_id'] }}</p>
+        <p>Cantidad: {{ order['quantity'] }}</p>
+        <p>Talla: {{ order['size'] }}</p>
+        <p>Color: {{ order['color'] }}</p>
+        <p>Prcio unidad: {{ result[2] }}</p>
+    </div>
+    <h1>Inventario disponible del producto:</h1>
+    <div>
+        <p>Referencia: {{ result[0] }}</p>
+        <p>Producto: {{ result[1] }}</p>
+        <p>Precio: {{ price }}</p>
+        <p>Inventario talla elegida: {{ result[3] }}</p>
+    </div>
+    {% if on_hand == false %}
+            <div>
+                <legend>Cantidad insuficiente del artículo, por favor añadir más cantidad de la talla pedida para este artículo para procesar</legend>
+                <form method="POST" 
+                action="/inventory_add?ref={{ result[0] }}&color={{ order['color'] }}&size={{ order['size'] }}&quantity={{ order['quantity'] }}&original_qty={{ result[3] }}">
+                    {{ process_order.hidden_tag() }}
+                    {{ process_order.add_inventory() }}
+                </form>
+                <form method="POST" action="/cancellation">
+                    {{ process_order.hidden_tag() }}
+                    {{ process_order.cancel_order() }}
+                </form>
+                
+            </div>
+    {% else %}
+            <div>
+                <form method="POST" action="/order_confirmation?ref={{ result[0] }}&color={{ order['color'] }}&size={{ order['size'] }}&quantity={{ order['quantity'] }}">
+                    {{ process_order.hidden_tag() }}
+                    {{ process_order.create_order }}
+                </form>
+                <form method="post" action="/cancellation">
+                    {{ process_order.hidden_tag() }}
+                    {{ process_order.cancel_order }}
+                </form>
+                
+            </div>
+    {% endif %}
+    
+
+{% endblock content %}

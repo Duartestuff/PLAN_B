@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE TABLE IF NOT EXISTS orders (
 
     order_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    inventory_id VARCHAR(10),
-    talla INTEGER,
+    inventory_id INTEGER NOT NULL,
+    talla VARCHAR(100),
     cantidad INTEGER,
     precio INTEGER,
     realizado INTEGER CHECK(realizado IN(0, 1)),

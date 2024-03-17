@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div>
+        <h1>Seleccione cuantas unidades desea añadir al inventario</h1>
+        <form method="POST">
+            {{ adjust_inventory.hidden_tag() }}
+            <legend>Recuerde que la cantidad original de este producto es {{ new_inventory['original_qty'] }}</legend>
+            <legend>Y la cantidad del pedido es {{ new_inventory['quantity'] }}</legend>
+            {{ adjust_inventory.new_quantity() }}
+            {{ adjust_inventory.submit() }}
+        </form>
+    </div>
+
+{% endblock content %}

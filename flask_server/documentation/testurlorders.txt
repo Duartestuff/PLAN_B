@@ -1,0 +1,5 @@
+URL WITH INVENTORY ON HAND
+http://127.0.0.1:8080/process_order?product_id=588&quantity=1&size=10&color=Cafe
+
+URL WITH NO INVENTORY ON HAND
+http://127.0.0.1:8080/process_order?product_id=588&quantity=20&size=10&color=Cafe
