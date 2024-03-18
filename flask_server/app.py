@@ -1,5 +1,5 @@
 from flask import Flask
-from forms import LoginForm, ProcessOrder, AdjustInventory
+from forms import LoginForm, ProcessOrder, AdjustInventory, ConfirmOrder, DisplayOrders
 from flask import Flask, render_template, redirect, url_for, flash, session, request
 import crud
 import util
@@ -94,6 +94,7 @@ def cancellation():
 
 @app.route('/order_confirmation', methods=['GET', 'POST'])
 def order_confirmation():
+    confirm_order = ConfirmOrder()
     order = {
             'product_id': request.args.get('ref'),
             'quantity': request.args.get('quantity'),
@@ -101,9 +102,54 @@ def order_confirmation():
             'size': request.args.get('size')
         }
     
-    message = crud.save_order(order)
 
-    return message
+    session['data'] = crud.save_order(order)
+    saved_data = session['data']
+    session.pop('data')
+
+    if request.method == 'POST':
+
+        if confirm_order.validate_on_submit():
+
+            if confirm_order.view_orders.data:
+                return redirect(url_for('view_orders'))
+
+    return render_template('order_confirmation.html', confirm_order=confirm_order, order_data=saved_data, confirmed=0)
+
+@app.route('/view_orders', methods=['GET', 'POST'])
+def view_orders():
+    order_info = []
+    forms = []
+    orders = crud.get_order_list()
+    for order in orders:
+        new_form = DisplayOrders()
+        new_form.order_id.data = order[0]
+        forms.append(new_form)
+        order_info.append(
+            {
+                'order_id': order[0],
+                'ref': order[1],
+                'talla': order[2],
+                'color': order[3],
+                'cantidad': order[4],
+                'precio': order[5],
+                'realizado': 'No realizado' if order[6] == 0 else 'Realizado'
+            }
+        )
+    if request.method == 'POST':
+        for form in forms:
+            if form.confirm.data:
+                message = crud.confirm_order(form.order_id.data)
+                flash(message, 'Confirmed_order')
+                return redirect(url_for('view_orders', order_info=order_info, forms=forms))
+            elif form.delete.data:
+                message = crud.delete_order(form.order_id.data)
+                flash(message, 'Delete_order')
+                return redirect(url_for('view_orders', order_info=order_info, forms=forms))
+    else:
+        return render_template('view_orders.html', order_info=order_info, forms=forms)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div><h1>Listado de pedidos</h1></div>
+
+    {% for i in range(order_info|length) %}
+
+        <div>
+            <form method="POST">
+                <h2>Orden {{ order_info[i]['order_id'] }}</h2>
+                <p>Referencia: {{ order_info[i]['ref'] }} | Talla: {{ order_info[i]['talla'] }} | Color: {{ order_info[i]['color'] }}</p>
+                <p>Cantidad: {{ order_info[i]['cantidad'] }} | Precio: {{ order_info[i]['precio'] }}</p>
+                <legend>{{ order_info[i]['realizado'] }}</legend>
+                {{ forms[i].confirm() }}
+                {{ forms[i].delete() }}
+            </form>
+        </div>
+
+    {% endfor %}
+
+{% endblock content %}

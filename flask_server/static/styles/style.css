@@ -1,0 +1,70 @@
+body{
+
+    color: rgb(92, 92, 92);
+    background-color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    color: gray;
+    font-size: medium;
+}
+
+h2{
+    color: rgb(58, 58, 61);
+    font-size: small;
+}
+
+h3{
+    color: rgb(0, 0, 92);
+    font-size: small;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-size: smaller;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    flex-wrap: wrap;
+}
+
+.container{
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: rgb(222, 223, 247);
+}
+
+.item{
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: 5px;
+}
+
+legend{
+    color: rgb(42, 130, 165);
+    font-size: smaller;
+    font-weight: 800;
+
+}
+
+input{
+    background-color: aqua;
+    font-size: small;
+    font-weight: 800;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 10px;
+}

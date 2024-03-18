@@ -38,12 +38,13 @@ CREATE TABLE IF NOT EXISTS products (
 
 CREATE TABLE IF NOT EXISTS orders (
 
-    order_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    inventory_id INTEGER NOT NULL,
-    talla VARCHAR(100),
+    order_id VARCHAR(10) PRIMARY KEY NOT NULL,
+    ref INTEGER NOT NULL,
+    talla VARCHAR(100) NOT NULL,
+    color VARCHAR(100) NOT NULL,
     cantidad INTEGER,
     precio INTEGER,
     realizado INTEGER CHECK(realizado IN(0, 1)),
-    FOREIGN KEY (inventory_id) REFERENCES product_inventory,
-    FOREIGN KEY (precio) REFERENCES product_list
+    FOREIGN KEY (ref) REFERENCES products(ref),
+    FOREIGN KEY (color) REFERENCES products(color)
 );

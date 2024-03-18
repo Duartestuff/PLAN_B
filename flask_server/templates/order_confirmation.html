@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <h1>{{ order_data['message'] }}</h1>
+    </div>
+    <div class="item"><h3>Orden de producto con referencia {{ order_data['order']['ref'] }}</h3></div>
+    <div class="container">
+        <div class="item">
+            <p>Cantidad</p>
+            <h3>{{ order_data['order']['cantidad'] }}</h3>
+        </div>
+        <div class="item">
+            <p>Talla</p>
+            <h3>{{ order_data['order']['talla'] }}</h3>
+        </div>
+        <div class="item">
+            <p>Color</p>
+            <h3>{{ order_data['order']['color'] }}</h3>
+        </div>
+        <div class="item">
+            <p>Precio</p>
+            <h3>{{ order_data['order']['precio'] }}</h3>
+        </div>
+    </div>
+    <div><legend>{{ order_data['order']['realizado'] }}</legend></div>
+    
+    <div>
+        <form method="POST">
+            {{ confirm_order.hidden_tag() }}
+            {{ confirm_order.view_orders() }}
+        </form>
+    </div>
+{% endblock content %}
