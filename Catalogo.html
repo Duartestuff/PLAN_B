@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/Catalogo.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="scripts/catalogo.js" defer></script>
 
 </head>
 
@@ -31,10 +32,20 @@
                     <a class="nav-link" href="Catalogo.html">Catalogo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Reseñas.html">Reseñas</a>
+                    <a class="nav-link" href="ExperienciaLu.html">Reseñas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="DescubreTuTalla.html">Descubre tu talla</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Otros servicios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Personalizados</a>
+                        <a class="dropdown-item" href="#">Dotacion para empresas</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -59,7 +70,9 @@
                 </h4>
                 <h4>$65.000</h4>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger prod" onclick="comprarProducto(
+                        ['Rojo', 'Verde'], 642, 'Vesido Aires'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
             </div>
@@ -83,7 +96,9 @@
                 <h4>$65.000</h4>
                 
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Azul', 'Amarillo', 675,'Vestido Floral']
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
                
@@ -104,7 +119,9 @@
             <h4>$66.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Lila'], 671, 'Vestido Chalis', 
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button>
             </div>
 
@@ -128,7 +145,9 @@
                 <h4>25.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Rosa', 'Negro', 'Blanca'], 640, 'Basica V'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
 
@@ -153,7 +172,9 @@
                 <h4>$25.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Negro', 'Rosa', 'Blanco'], 641, 'Basica Hulter'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
 
@@ -177,7 +198,9 @@
                 <h4>$62.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Rojo', 'Verde'], 669, 'Blusa Lina'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
 
@@ -197,7 +220,9 @@
             <h4>$58.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Kamel'], 663, 'Blusa Arigata'
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button>
             </div>
 
@@ -216,7 +241,9 @@
             <h4>$65.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Blanco', 'Azul'], 664, 'Blusa Suave'
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button>
             </div>
         </div>
@@ -226,15 +253,16 @@
         <div class="product">
             <h3>Referencia 665</h3>
             <img src="assets/img/Colección/665_verde.jpg" alt="Blusa 664">
-            <br><br>
             <h2>Blusa Ole</h2>
-            <h4>Confeccionada en algodón poliéster craquelado. En verde y azul.
+            <h4>Confeccionada en algodón poliéster craquelado. En verde y azul.<br> <br>
                 Disponible de la talla 6 a 16
             </h4>
             <h4>$65.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Verde', 'Azul'], 588, 'Blusa Ole'
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button></a>
             </div>
         </div>
@@ -258,7 +286,9 @@
                 <h4>$75.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Negro', 'Cafe'], 588, 'Blazer, Natural'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
 
@@ -283,7 +313,9 @@
                 </h4>
                 <h4>$90.000</h4>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Negro', 'Lila'], 674, 'Enterizo Sensacion'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
             </div>
@@ -307,7 +339,9 @@
                 <h4>$75.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Negro', 'Rojo', 'Gris'], 591, 'Leguins Exito'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
             </div>
@@ -332,7 +366,9 @@
                 <h4>$65.000</h4>
                 <br>
                 <div class="row mt-3">
-                    <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                    <button class="btn btn-danger" onclick="comprarProducto(
+                        ['Kamel', 'Terracota', 'Azul'], 668, 'Leguins Aurora'
+                    )">Comprar<br><i
                             class="fas fa-shopping-cart fa-2x icono"></i></button>
                 </div>
             </div>
@@ -351,7 +387,9 @@
             <h4>$62.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Azul'], 654, 'Jean Light'
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button>
             </div>
         </div>
@@ -369,7 +407,9 @@
             <h4>$72.000</h4>
             <br>
             <div class="row mt-3" style="width: 100%;">
-                <button class="btn btn-danger" onclick="alerta()">Añadir al carrito <br><i
+                <button class="btn btn-danger" onclick="comprarProducto(
+                    ['Kamel', 'Beige'], 672, 'Pantalon Lino'
+                )">Comprar<br><i
                         class="fas fa-shopping-cart fa-2x icono"></i></button>
             </div>
         </div>

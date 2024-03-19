@@ -102,19 +102,16 @@ def order_confirmation():
             'size': request.args.get('size')
         }
     
-
-    session['data'] = crud.save_order(order)
-    saved_data = session['data']
-    session.pop('data')
-
     if request.method == 'POST':
 
         if confirm_order.validate_on_submit():
 
             if confirm_order.view_orders.data:
+                session.pop('data')
                 return redirect(url_for('view_orders'))
-
-    return render_template('order_confirmation.html', confirm_order=confirm_order, order_data=saved_data, confirmed=0)
+            
+    session['data'] = crud.save_order(order)            
+    return render_template('order_confirmation.html', confirm_order=confirm_order, order_data=session['data'], confirmed=0)
 
 @app.route('/view_orders', methods=['GET', 'POST'])
 def view_orders():
